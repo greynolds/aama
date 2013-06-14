@@ -1,7 +1,8 @@
 Generating data:
 
-Run the scripts from the aama home dir (called <aama> below).  In my case, ~/aama, so: $
-tools/<script.sh>.
+Run the scripts from the aama home dir (called <aama> below).  In my case, ~/aama, so:
+
+    $ tools/<script.sh>
 
     convert.sh converts data from ~/work/aamadata to ~/aama/data.
 

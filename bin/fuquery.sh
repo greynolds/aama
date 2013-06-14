@@ -14,11 +14,15 @@ do
     fn=${lang/-/\/}
     fn1=( ${lang/-/ } )
     fn2="${fn1[@]^}"
-    FN=${fn2/ /\/}
+    Fn=${fn2/ /\/}
+    FN=`echo $Fn | tr '[:lower:]' '[:upper:]'`
     echo querying ${FN/ /\/} $fn
     of=`basename ${2#sparql/templates/}`
     localqry="sparql/${of%.template}.$lang.rq"
     echo $localqry
-    sed -e "s/%Lang%/${FN/\//\/}/g" -e "s/%lang%/${fn/\//\/}/g" $2 > $localqry
+    sed -e "s/%Lang%/${Fn/\//\/}/g" \
+	-e "s/%LANG%/${FN/\//\/}/g" \
+	-e "s/%lang%/${fn/\//\/}/g" \
+	$2 > $localqry
     s-query --service http://localhost:3030/aama/query --query=$localqry
 done

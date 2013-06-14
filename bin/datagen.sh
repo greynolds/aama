@@ -1,7 +1,7 @@
 #!/bin/bash
 # usage:  datagen.sh "dir"
 
-. tools/constants.sh
+. bin/constants.sh
 
 for d in `ls -d $1`
 do
@@ -15,7 +15,7 @@ do
 	    -xi \
 	    -s:$f \
 	    -o:${f%-pdgms\.xml}.data.ttl \
-	    -xsl:tools/xml2data.xsl \
+	    -xsl:bin/xml2data.xsl \
 	    lang=`dirname ${f#data/}`;
 	# set +x;
     done

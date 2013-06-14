@@ -3,7 +3,7 @@
 # IMPORTANT:  use quotes if dir includes a wildcard
 # e.g.  dumpvals.sh "data/*"
 
-. tools/constants.sh
+. bin/constants.sh
 
 for d in `ls -d $1`
 do
@@ -16,7 +16,7 @@ do
 	    -xi \
 	    -s:$f \
 	    -o:tmp/`basename ${f%-pdgms\.xml}`.vals \
-	    -xsl:tools/dumpvals.xsl \
+	    -xsl:bin/dumpvals.xsl \
 	    lang=${d#data/};
 	# set +x;
     done
