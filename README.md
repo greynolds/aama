@@ -1,4 +1,4 @@
-# aama #
+# aama-data #
 
 Afro-Asiatic Morphological Archive
 
